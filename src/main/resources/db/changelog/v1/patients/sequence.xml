@@ -1,0 +1,15 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet  author="emin"  id="createSequence">
+        <createSequence
+                        sequenceName="sequence_patients_id"
+                        startValue="10"
+                        dataType="bigint"
+                        incrementBy="2"
+                        maxValue="1000"
+        />
+    </changeSet>
+</databaseChangeLog>
