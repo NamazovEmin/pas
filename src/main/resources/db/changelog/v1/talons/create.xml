@@ -4,18 +4,21 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
 
-    <changeSet id="create-table-patients" author="emin">
-        <createTable tableName="patients" >
-            <column name="id" type="bigint" valueSequenceNext="sequence_patients_id">
+    <changeSet id="create-table-talons" author="emin">
+        <createTable tableName="talons">
+            <column name="id" type="bigint" valueSequenceNext="sequence_talons_id">
                 <constraints  nullable="false" primaryKey="true"/>
             </column>
             <column name="uuid" type="varchar(64)">
                 <constraints  nullable="false" unique="true"/>
             </column>
-            <column name="fullname" type="varchar(64)">
-                <constraints nullable="false"/>
+            <column name="doctors_id" type="bigint" >
+                <constraints  nullable="false"/>
             </column>
-            <column name="birthdate" type="varchar(64)">
+            <column name="patients_id" type="bigint" >
+                <constraints  nullable="true"/>
+            </column>
+            <column name="start_reception" type="timestamp">
                 <constraints nullable="false"/>
             </column>
         </createTable>
