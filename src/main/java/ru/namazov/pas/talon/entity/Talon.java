@@ -1,11 +1,6 @@
-/*
- * Copyright (c) 2024, TopS BI LLC. All rights reserved.
- * http://www.topsbi.ru
- */
-
 package ru.namazov.pas.talon.entity;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -44,7 +39,7 @@ public class Talon {
 
     @DateTimeFormat
     @Column(name = "start_reception")
-    private Date startReception;
+    private LocalDateTime startReception;
 
     @PrePersist
     public void initializeUUID() {
