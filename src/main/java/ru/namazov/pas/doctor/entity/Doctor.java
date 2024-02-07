@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2024, TopS BI LLC. All rights reserved.
- * http://www.topsbi.ru
- */
-
 package ru.namazov.pas.doctor.entity;
 
 import java.util.UUID;
