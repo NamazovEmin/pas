@@ -37,7 +37,7 @@ public class Doctor {
     private String uuID;
 
     @Column(name = "fullname")
-    private String FullName;
+    private String fullName;
 
     @PrePersist
     public void initializeUUID() {
