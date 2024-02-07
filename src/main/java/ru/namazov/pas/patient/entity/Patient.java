@@ -10,7 +10,7 @@
 
 package ru.namazov.pas.patient.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
@@ -45,7 +45,7 @@ public class Patient {
     private String FullName;
 
     @Column(name = "birthdate")
-    private Date birthDate;
+    private LocalDate birthDate;
 
     @PrePersist
     public void initializeUUID() {
