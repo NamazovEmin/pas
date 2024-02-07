@@ -1,6 +1,6 @@
 package ru.namazov.pas.talon.dto;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,5 +13,5 @@ public class EmptySlotsRequest {
 
     private Long doctorID;
 
-    private Date currentDate;
+    private LocalDateTime currentDate;
 }
