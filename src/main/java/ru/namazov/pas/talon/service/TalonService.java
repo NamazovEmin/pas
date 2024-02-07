@@ -1,12 +1,8 @@
-/*
- * Copyright (c) 2024, TopS BI LLC. All rights reserved.
- * http://www.topsbi.ru
- */
-
 package ru.namazov.pas.talon.service;
 
 import java.util.List;
 
+import ru.namazov.pas.talon.controller.soap.ScheduleXML;
 import ru.namazov.pas.talon.dto.EmptySlotsRequest;
 import ru.namazov.pas.talon.entity.Talon;
 
@@ -17,4 +13,6 @@ public interface TalonService {
    Talon reserve(Talon talon);
 
     List<Talon> getSlotsByPatientID(Long patientID);
+
+    List<Talon> buildSchedule(List<ScheduleXML> scheduleList);
 }
