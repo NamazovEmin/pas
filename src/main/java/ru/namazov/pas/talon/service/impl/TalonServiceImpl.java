@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import ru.namazov.pas.doctor.entity.Doctor;
 import ru.namazov.pas.doctor.service.DoctorService;
+import ru.namazov.pas.exceptions.IllegalArgumentException;
+import ru.namazov.pas.exceptions.NotFoundException;
 import ru.namazov.pas.talon.controller.soap.ScheduleXML;
 import ru.namazov.pas.talon.dto.EmptySlotsRequest;
 import ru.namazov.pas.talon.entity.Talon;
@@ -32,9 +34,9 @@ public class TalonServiceImpl implements TalonService {
 
     @Override
     public Talon reserve(Talon talon) {
-        Talon byId = talonRepository.findById(talon.getId()).orElseThrow();
+        Talon byId = talonRepository.findById(talon.getId()).orElseThrow(() -> new NotFoundException("Данного слота не существует"));
         if (byId.getPatient() != null) {
-            throw new RuntimeException();
+            throw new IllegalArgumentException("Слот уже забронирован другим пациентом");
         }
         byId.setPatient(talon.getPatient());
         return talonRepository.save(byId);
